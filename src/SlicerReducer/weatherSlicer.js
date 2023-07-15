@@ -306,15 +306,22 @@ const initialState = {
     'Dhanot',
     'Hujra Shah Muqim',
   ],
+  weather:{}
 };
 
 export const weatherSlicer = createSlice({
   name: 'weather',
   initialState,
-  reducers: {},
+  reducers: {
+    cityWeather(state,action){
+      // console.log('weather-----------------',action.payload,state.weather)
+        state.weather=action.payload
+    }
+  },
+
 });
 
 // Action creators are generated for each case reducer function
-export const {changeTheme, changeThemeSetBool} = weatherSlicer.actions;
+export const {cityWeather} = weatherSlicer.actions;
 
 export default weatherSlicer.reducer;

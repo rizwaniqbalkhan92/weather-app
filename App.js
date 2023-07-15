@@ -11,6 +11,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import axios from 'axios';
 import CitiesList from './src/Components/CitiesList';
+import Detail from './src/Components/Detail';
 
 const App = () => {
 useEffect(()=>{
@@ -43,8 +44,9 @@ useEffect(()=>{
   const Stack=createNativeStackNavigator()
   return <Provider store={store}>
   <NavigationContainer>
-  <Stack.Navigator>
+  <Stack.Navigator  screenOptions={{headerShown:false}}>
     <Stack.Screen name="Cities" component={CitiesList} />
+    <Stack.Screen name="detail" component={Detail} />
   </Stack.Navigator>
 </NavigationContainer>
   </Provider>;
